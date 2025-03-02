@@ -1,4 +1,20 @@
-\documentclass[a5paper]{book}
+\documentclass{book}
+
+\usepackage[a5paper]{geometry}
+%\geometry{left=2cm}
+%\geometry{right=1cm}
+%\geometry{top=2cm}
+%\geometry{bottom=2cm}
+\geometry{left=1.5cm}
+\geometry{right=1cm}
+\geometry{top=1cm}
+\geometry{bottom=1.5cm}
+
+%\setlength{\parindent}{1.25cm}
+\setlength{\parindent}{0.7cm}
+\linespread{1}
+%\linespread{1.25}
+
 \usepackage{enumitem}
 %\usepackage{soul}
 \usepackage{booktabs}
@@ -12,7 +28,11 @@
     % refsection=structure,
     % sorting=ynt,
 ]{biblatex}
-\usepackage{IU8-01-base}
+%\usepackage{IU8-01-base}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{anyfontsize}
+\usepackage[fontsize=11pt]{scrextend}
 \usepackage{IU8-06-tables}
 \usepackage{titlesec}
 \usepackage{titletoc}
@@ -29,16 +49,23 @@
 \titleformat{\structure}[hang]{\clearpage\normalfont\bfseries\centering}{}{0em}{}
 \titlespacing*{\structure}{0pt}{0pt}{1em}
 \titlecontents{structure}{}{}{}{}
-\titleformat{\section}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesubparagraph}{1em}{}
-\titlespacing*{\section}{0pt}{0pt}{2ex}[2ex]
-\titlespacing*{\subsection}{0pt}{2ex}{2ex}[2ex]
-\titlespacing*{\subsubsection}{0pt}{2ex}{2ex}[2ex]
-\titlespacing*{\paragraph}{0pt}{2ex}{2ex}[2ex]
-\titlespacing*{\subparagraph}{0pt}{2ex}{2ex}[2ex]
+%\titleformat{\section}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\theparagraph}{1em}{}
+%\titleformat{\subparagraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesubparagraph}{1em}{}
+
+\titleformat{\section}[block]{\normalsize\normalfont\bfseries}{\thesection}{\parindent}{}
+\titleformat{\subsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsection}{\parindent}{}
+\titleformat{\subsubsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsubsection}{\parindent}{}
+\titleformat{\paragraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\theparagraph}{\parindent}{}
+\titleformat{\subparagraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesubparagraph}{\parindent}{}
+
+\titlespacing*{\section}{0pt}{1em}{0.5em}[1em]
+\titlespacing*{\subsection}{0pt}{1em}{0.5em}[1em]
+\titlespacing*{\subsubsection}{0pt}{1em}{0.5em}[1em]
+\titlespacing*{\paragraph}{0pt}{1em}{0.5em}[1em]
+\titlespacing*{\subparagraph}{0pt}{1em}{0.5em}[1em]
 
 \makeatletter
 \renewcommand*\l@structure{\@dottedtocline{0}{0mm}{0em}}
@@ -50,7 +77,7 @@
 \makeatother
 %\usepackage{IU8-10-titlepage}
 \usepackage{IU8-13-contents}
-\RequirePackage{graphicx}
+%\RequirePackage{graphicx}
 \sloppy % Запретить выход текста за поля
 \RequirePackage{bookmark}
 \def\toclevel@structure{1} % Для правильного отображения в содержании pdf
@@ -66,14 +93,18 @@
 } % Кликабельные ссылки в pdf
 %\hbadness=10000
 \setlist[enumerate]{
-  leftmargin=\parindent,
+%  leftmargin=\parindent,
   labelindent=\parindent,
+  itemindent=\leftmargin,
+  leftmargin=0pt,
   align=left,
   nosep,
 }
 \setlist[itemize]{
   label=\textendash,
-  leftmargin=\parindent,
+  itemindent=\leftmargin,
+  leftmargin=0pt,
+%  leftmargin=\parindent,
   labelindent=\parindent,
   align=left,
   nosep,
@@ -82,23 +113,14 @@
 \usepackage{IU8-19-counters}
 \usepackage{graphicx}
 \usepackage{textcomp}
-\usepackage{geometry}
-\geometry{left=2cm}
-\geometry{right=1cm}
-\geometry{top=2cm}
-\geometry{bottom=2cm}
-\setlength{\parindent}{1.25cm}
-\usetikzlibrary {automata,positioning,arrows.meta}
-%\newcommand{\uline}[1]{\ul{#1}}
-%\usepackage{xltxtra}
+
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \setromanfont{Times New Roman} 
 \setsansfont{Arial}
-\setmonofont{Courier New} 
-%\zerotocindent
-%\hyphenpenalty=100000
-\hyphenpenalty=10
+\setmonofont{Courier New}
+
+%\hyphenpenalty=0
 \usepackage{fancyhdr}
 
 \fancypagestyle{mainstyle}{
@@ -116,11 +138,10 @@
 }
 \usepackage[bottom]{footmisc}
 
-\RequirePackage[all, defaultlines=2]{nowidow} % Запрет "висячих" слов
-\setnoclub
+%\RequirePackage[all, defaultlines=2]{nowidow} % Запрет "висячих" слов
+%\setnoclub
 
 \renewcommand{\emph}[1]{\textit{#1}}
-
 
 \begin{document}
 \thispagestyle{plain}
@@ -128,6 +149,9 @@
 
 \pagebreak
 \thispagestyle{plain}
+
+%\vspace{5\parindent}
+
 В книге использованы некоторые материалы заданий для родителей, которые
 в период 1965---1972 гг. разрабатывались Г. Л. Выгодской, А. А. Катаевой
 (Венгер) и Э. И. Леонгард; некоторые тексты Е. А. Ивановой, а также
@@ -135,7 +159,7 @@
 (1982) и экспериментальной программы «Воспитание и обучение глухих
 дошкольников в детском саду» под ред. Э. И. Леонгард (1987).
 
-\vspace{2\parindent}
+\vspace{5\parindent}
 
 \textbf{Леонгард Э. И., Самсонова Е. Г.}
 
@@ -147,10 +171,11 @@
 дошкольные учреждения. Система, предложенная авторами новаторская,
 отличающаяся от принятой в сурдопедагогике. \\
 
+\vfill
+
 \textbf{ББК 74.3}
 
 \textcopyright Министерство образования РСФСР, 1991
-\vfill
 
 \pagebreak
 \pagestyle{mainstyle}
@@ -408,7 +433,10 @@
 
 \emph{\textbf{Развитие движений}}
 
-1) Упражняйте малыша \textbf{в ползании.} (В тех случаях, если ребенок
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+%1) 
+\item Упражняйте малыша \textbf{в ползании.} (В тех случаях, если ребенок
 отстает в этом виде движения, \textbf{учите} его ползать.) Вы
 привлекаете внимание ребенка к какой-нибудь игрушке, кладете ее на
 некотором расстоянии от него спереди или сбоку, затем приседаете перед
@@ -419,10 +447,7 @@
 любимую игрушку). (В момент ползания карман с аппаратом перемещаются на
 спину малыша.)
 
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
+%\setcounter{enumi}{1}
 \item
   
   Учите ребенка подтягиваться на носочках. Вы берете в руки или
@@ -757,7 +782,6 @@
 
 \emph{\textbf{Развитие движений.}}
 
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -785,12 +809,7 @@
   время чередуются. В конце концов, ребенок отталкивает мяч сам. Чтобы
   малышу было интереснее играть, вы тоже участвуете в игре --- раза два
   мяч отталкивает ребенок, раза два-три --- вы и т. д.
-  
-\end{enumerate}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
 \item
   
   Учите ребенка \textbf{бегать, ориентируясь в пространстве, к
@@ -836,10 +855,6 @@
 \item
   
   Учите ребенка \textbf{складывать в мешочек небольшие предметы.}
-  
-\end{enumerate}
-
-
 Перед ребенком на полу (на ковре) или на столике разложите 4---5 мелких
 предметов --- куколку, собачку, кубик, лопатку, шарик. Приходит кукла
 (Буратино, мишка, лиса, Чебурашка или кто-то другой) и рассматривает
@@ -857,10 +872,6 @@
 двух повторов делать не нужно, чтобы сохранить у малыша интерес к
 данному упражнению.
 
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
 \item
   
   Учите ребенка \textbf{бросать мелкие предметы} (бирюльки) \textbf{в
@@ -878,21 +889,13 @@
   все бирюльки, «поболтайте» их в сосуде, чтобы они попрыгали, и
   помогите малышу высыпать их на блюдце. Затем это упражнение
   выполняется еще раз, но уже другой рукой.
-  
-\end{enumerate}
-
 
 Если интерес к игре у ребенка пропал, уберите вместе с ним бирюльки,
 сосуд и блюдце (помахав им рукой: «Пока, пока!») и переходите к
 следующему упражнению. Впоследствии можно использовать больше бирюлек---
 10---12.
 
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
 \item
-  
   Учите ребенка \textbf{нанизывать на пирамидку кольца.} Посадите его за
   столик, и у него на глазах снимайте кольца с маленькой пирамидки из
   4---5 крупных элементов, фиксируя внимание ребенка на каждом элементе.
@@ -904,11 +907,9 @@
   учится совмещать отверстия колец со стержнем и надевать их на
   стержень. Если ребенок --- левша, пусть действует левой рукой, не
   перекладывайте кольцо из его левой руки в правую.
-  
-\end{enumerate}
 
 
-5. Учите ребенка \textbf{прослеживать движение предмета} за ширмой (игра
+\item Учите ребенка \textbf{прослеживать движение предмета} за ширмой (игра
 «Ку-ку»). На спинку стула вешается простынка, пеленка или покрывало.
 Стул поворачивают спинкой к ребенку. Вы берете куклу (желательно бибабо,
 которая надевается на руку, но можно и любую). Кукла выглядывает из-за
@@ -919,6 +920,9 @@
 шкаф. На вопросительные взгляды ребенка или вопрос «Ляля? Ляля?» (т. е.
 «Где Ляля?») отвечаете: «Ляля там, Ляля ушла»,--- и показываете рукой в
 сторону.
+  
+\end{enumerate}
+
 
 \emph{\textbf{Развитие действий с предметами}}
 
@@ -1024,7 +1028,9 @@
 
 \emph{\textbf{Развитие движений}}
 
-1. \textbf{Учите ребенка катать мяч в цель.} На полу стоят в ряд
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item \textbf{Учите ребенка катать мяч в цель.} На полу стоят в ряд
 несколько пластмассовых кеглей или кубиков. Вы сажаете ребенка на пол
 так, чтобы до кеглей было расстояние примерно 0,5 м, разводите его ножки
 в стороны, даете ребенку мяч и его руками катите мяч к кеглям. Кегли
@@ -1032,10 +1038,7 @@
 проделать то же самое еще раз, но уже самостоятельно. Упражнение
 повторяете 2---3 раза.
 
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
+%\setcounter{enumi}{1}
 \item
   
   Учите ребенка \textbf{подражать движениям рук и ног.} Вместе с
@@ -1178,8 +1181,6 @@
   Если ребенок слабослышащий, то он слушает себя при меньшем увеличении
   громкости, чем глухой, например вас он слушает при усилении 1---2, а
   себя --- при усилении 3---4.
-  
-\end{enumerate}
 
 
 Чем интереснее игры вы придумываете, тем быстрее ваш ребенок начнет
@@ -1190,9 +1191,9 @@
 любого его высказывания.
 
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
+%\begin{enumerate}
+%\def\labelenumi{\arabic{enumi}.}
+%\setcounter{enumi}{2}
 \item
   
   \textbf{Знакомьте ребенка с новыми словами в лепетной и полной форме:}
@@ -1284,15 +1285,15 @@
 
 \textbf{\emph{Развитие движений}}
 
-1. Учите ребенка \textbf{ходить вверх и вниз по наклонной доске,}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item Учите ребенка \textbf{ходить вверх и вниз по наклонной доске,}
 приподнятой от пола на высоту 10 см одним концом. Сначала по доске идете
 вы, а потом предлагаете ребенку: «Иди». Ребенок проходит по доске и
 спрыгивает с высокого конца доски, держась за вашу руку.
 
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{1}
+%\setcounter{enumi}{1}
 \item
   
   Продолжайте учить ребенка подражать движениям рук. Количество движений
