@@ -1,5 +1,9 @@
 \documentclass{book}
 
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
 \usepackage[a5paper]{geometry}
 %\geometry{left=2cm}
 %\geometry{right=1cm}
@@ -55,7 +59,7 @@
 %\titleformat{\paragraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\theparagraph}{1em}{}
 %\titleformat{\subparagraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\thesubparagraph}{1em}{}
 
-\titleformat{\section}[block]{\normalsize\normalfont\bfseries}{\thesection}{\parindent}{}
+\titleformat{\section}[block]{\footnotesize\normalfont\bfseries}{\thesection}{\parindent}{}
 \titleformat{\subsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsection}{\parindent}{}
 \titleformat{\subsubsection}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries\itshape}{\thesubsubsection}{\parindent}{}
 \titleformat{\paragraph}[block]{\hspace{\parindent}\normalsize\normalfont\bfseries}{\theparagraph}{\parindent}{}
@@ -114,11 +118,11 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setromanfont{Times New Roman} 
-\setsansfont{Arial}
-\setmonofont{Courier New}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%\setromanfont{Times New Roman} 
+%\setsansfont{Arial}
+%\setmonofont{Courier New}
 
 %\hyphenpenalty=0
 \usepackage{fancyhdr}
@@ -3222,11 +3226,6 @@ II. Знакомьте ребенка с \textbf{окружающей приро
 эта работа с разным расположением картинок в разных плоскостях готовит
 зрительное восприятие к чтению.
 
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{media/media/image11.png}
-\caption*{Рис. 11}
-\end{figure}
 
 Когда закончите работу с первым комплектом картинок, берете второй
 комплект --- парные (которые вы раньше отложили в сторону), и ребенок
@@ -3235,25 +3234,41 @@ II. Знакомьте ребенка с \textbf{окружающей приро
 произношению), оглядывает лежащий перед ним ряд, находит парную, а вы
 указываете, куда он может ее положить. Если картинки-образцы лежат в
 горизонтальном ряду, полукругом или по диагонали, то ребенок кладет свои
-картинки под или над образцом (рис. 11).Если образцы лежат в
-вертикальном ряду или лесенкой, то ребенок кладет свои картинки рядом
---- справа или слева от образца (Рис. 12)
+картинки под или над образцом (рис. 11).
+
+Если образцы лежат в вертикальном ряду или лесенкой, то ребенок кладет свои картинки рядом --- справа или слева от образца (Рис. 12)
 
 \begin{figure}
 \centering
+\includegraphics[width=\linewidth]{media/media/image11.png}
+\caption*{Рис. 11}
+~\\
+
+\centering
 \includegraphics[width=\linewidth]{media/media/image12.png}
 \caption*{Рис. 12}
+~\\
+
+\centering
+\includegraphics[width=\linewidth]{media/media/image13.png}
+\caption*{Рис. 13}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{media/media/image14.png}
+\caption*{Рис. 14}
+~\\
+
+\centering
+\includegraphics[width=0.7\linewidth]{media/media/image15.png}
+\caption*{Рис. 15}
 \end{figure}
 
 В наборном полотне картинки могут выглядеть так (рис. 13). При таком
 расположении материала перед ребенком ярко выступает сходство рядом
 лежащих картинок.
 
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{media/media/image13.png}
-\caption*{Рис. 13}
-\end{figure}
 
 В этой игре вы с ребенком меняетесь ролями. В процессе игры побуждаете
 его общаться с вами с помощью речи (отдельных слов). Желательно
@@ -3280,19 +3295,14 @@ II. Знакомьте ребенка с \textbf{окружающей приро
 (рис. 14). По мере овладения ребенком этим умением меняйте соотношение
 частей --- они могут резко отличаться по величине (рис. 15).
 
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{media/media/image14.png} Рис.
-\caption*{Рис. 14}
-\end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{media/media/image15.png}
-\caption*{Рис. 15}
-\end{figure}
 
-Занятия могут быть организованы следующим образом: только с
+Занятия могут быть организованы следующим образом.
+
+
+\subsubsection{!!!ПОТЕРЯНЫ СТРАНИЦЫ 56-57!!!}
+
+только с
 прямоугольниками (равновеликими и разными по величине, расположенными
 горизонтально или вертикально), то теперь разрезная картинка может
 состоять из двух треугольников, треугольника и пятиугольника,
@@ -3387,7 +3397,7 @@ II. Знакомьте ребенка с \textbf{окружающей приро
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{media/media/image16.png}
+\includegraphics[width=0.5\linewidth]{media/media/image16.png}
 \caption*{Рис. 19}
 \end{figure}
 
@@ -10371,11 +10381,13 @@ III. \emph{\textbf{Развитие восприятия формы.}}
 ребенку образец высказывания.
 
 \begin{figure}
+\centering
 \includegraphics[width=0.4\linewidth]{media/media/image51.png}
 \caption*{Рис. 55 а}
 \end{figure}
 
 \begin{figure}
+\centering
 \includegraphics[width=0.8\linewidth]{media/media/image52.jpg}
 \caption*{Рис. 55 б}
 \end{figure}
